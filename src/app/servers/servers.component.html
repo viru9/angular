@@ -7,7 +7,11 @@
 
 <button (click)="buttonClick()" [disabled]="!disableButton" type="button" name="button" class="btn btn-primary">Click Me </button>
 <p [innerText]="disableButton"></p>
-<p>{{buttonClickEvent}}</p>
 
-<app-server></app-server>
-<app-server></app-server>
+<p *ngIf="showParagraph; else notClicked">{{buttonClickEvent}}</p>
+
+<ng-template #notClicked>
+  <p>{{buttonClickEvent}}</p>
+</ng-template>
+
+<app-server *ngFor="let server of servers"></app-server>

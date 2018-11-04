@@ -10,6 +10,8 @@ export class ServersComponent implements OnInit {
   disableButton: boolean = false;
   buttonClickEvent: string = "No button clicked yet";
   inputTextValue : string = "viraj madhushanka";
+  showParagraph : boolean = false;
+  servers : array = ["server1","server2"];
 
   constructor() {
 
@@ -23,7 +25,9 @@ export class ServersComponent implements OnInit {
   }
 
   buttonClick(){
-    this.buttonClickEvent = "button clicked successfully..."
+    this.buttonClickEvent = "button clicked successfully...";
+    this.showParagraph = true;
+    this.servers.push('this.inputTextValue');
   }
 
   onChangeInput(event){
